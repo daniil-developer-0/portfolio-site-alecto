@@ -1,0 +1,126 @@
+.hero {
+  color: white;
+  // --- Background ---
+  background-image: url("/assets/img/bg-hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  // --- Size ---
+  width: 100%;
+  height: 100vh;
+  // === Container ===
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  // === Content ===
+  &__title {
+    font-family: "Raleway", sans-serif;
+    font-weight: 200;
+    text-align: center;
+  }
+  &__bold-text {
+    font-weight: 700;
+  }
+  &__under-title {
+    margin-top: 30px;
+    font-family: "PT Sans", sans-serif;
+    text-align: center;
+    font-weight: 400;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  &__btn {
+    margin: 65px auto 0;
+  }
+  // === Slider ===
+  .slider {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    // === Wrapper ===
+    &__wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+    &__slide {
+      transition: 0.3s ease-in-out;
+      width: 100%;
+      display: none;
+      transform: translateX(100%);
+      &.active {
+        transform: translateX(0%);
+        display: block;
+      }
+    }
+    // === Arrows ===
+    &__arrow {
+      display: none;
+      @media only screen and (min-width: 1024px) {
+        display: block;
+      }
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 27px;
+      height: 54px;
+      span {
+        display: block;
+      }
+      span:first-child,
+      span:last-child {
+        width: 100%;
+        height: 1px;
+        background-color: white;
+      }
+      &_left {
+        span:first-child {
+          transform-origin: top right;
+          transform: rotate(-45deg);
+        }
+        span:last-child {
+          transform-origin: bottom right;
+          transform: translateY(37px) rotate(45deg);
+        }
+        left: 0;
+      }
+      &_right {
+        span:first-child {
+          transform-origin: top left;
+          transform: rotate(45deg);
+        }
+        span:last-child {
+          transform-origin: bottom left;
+          transform: translateY(37px) rotate(-45deg);
+        }
+        right: 0;
+      }
+    }
+
+    // === Breadcrumbs ===
+    &__breadcrumbs {
+      margin: 70px auto 0;
+      width: max-content;
+    }
+    &__breadcrumb {
+      display: inline-block;
+      margin-left: 1em;
+      width: 10px;
+      height: 10px;
+      border: 2px solid white;
+      border-radius: 50%;
+      &:first-child {
+        margin-left: 0;
+      }
+      &.active {
+        background-color: white;
+      }
+    }
+  }
+}

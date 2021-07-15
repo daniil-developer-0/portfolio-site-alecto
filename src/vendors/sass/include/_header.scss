@@ -1,10 +1,11 @@
-@import "adaptive";
 // Header
-body {
-  background: limegreen;
-}
 .header {
   padding-top: 25px; // In pc version it's 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-family: "Raleway", sans-serif;
   &__body {
     margin: 0 auto;
     display: flex;
@@ -14,6 +15,7 @@ body {
   &__logo {
   }
   &__menu {
+    z-index: 1;
     position: absolute;
     display: none;
     height: 100vh;
@@ -23,7 +25,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #00000080;
+    background-color: #000000cb;
     color: white;
     @media only screen and (min-width: 1024px) {
       background-color: inherit;
@@ -55,6 +57,9 @@ body {
         font-size: 14px;
         margin-top: 0;
         margin-left: 60px;
+        &:hover {
+          color: #17daa3;
+        }
       }
     }
     &__link {
@@ -73,6 +78,12 @@ body {
       max-width: 200px;
     }
     &__icon {
+      transition: 0.33s ease-in;
+    }
+    &.active {
+      .search__icon {
+        transform: rotateY(180deg);
+      }
     }
     @media only screen and (min-width: 1024px) {
       display: flex;
@@ -87,6 +98,7 @@ body {
   $burger-line-height: 3px;
   $burger-clr: white;
   &__burger {
+    z-index: 2;
     // --- Size ---
     width: $burger-width;
     height: $burger-height;

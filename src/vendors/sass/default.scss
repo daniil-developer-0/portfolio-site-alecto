@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+body {
+  color: #87949e;
+  font-size: 18px;
+  font-family: "PT Sans", sans-serif;
+}
+
 @mixin container($w, $p) {
   max-width: calc(#{$w} + 2 * #{$p});
   padding: 0 $p;
@@ -11,6 +17,8 @@
 
 .container {
   width: 100%;
+  margin: 0 auto;
+
   @include container(1480px, 1rem);
 }
 
@@ -23,4 +31,53 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+// === Content ===
+.btn {
+  cursor: pointer;
+  display: block;
+  width: max-content;
+  padding: 1rem 51px;
+  border-radius: 23px;
+  border: 2px solid white;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+.btn_green {
+  background-color: #17daa3;
+  border: none;
+  color: white;
+}
+
+.title {
+  // --- Font ---
+  font-family: "Raleway";
+  line-height: 1.33em;
+  letter-spacing: 0.066em;
+  font-size: 60px;
+  font-weight: 250;
+  color: #576671;
+  &_center {
+    text-align: center;
+    position: relative;
+    &::after {
+      content: "";
+      background-color: #17daa3;
+      display: block;
+      margin: 18px auto 0;
+      width: 30px;
+      height: 1px;
+      @media only screen and (min-width: 1024px) {
+        margin-top: 36px;
+      }
+    }
+  }
+}
+
+.text {
+  font-size: 18px;
+  color: #87949e;
+  line-height: 30px;
+  letter-spacing: 0;
 }

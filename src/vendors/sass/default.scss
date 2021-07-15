@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@mixin container($w, $p) {
+  max-width: calc(#{$w} + 2 * #{$p});
+  padding: 0 $p;
+}
+
+.container {
+  width: 100%;
+  @include container(1480px, 1rem);
+}
+
+._reset-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+._reset-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,148 @@
+@import "adaptive";
+// Header
+body {
+  background: limegreen;
+}
+.header {
+  padding-top: 25px; // In pc version it's 50px;
+  &__body {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+  }
+  &__menu {
+    position: absolute;
+    display: none;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #00000080;
+    color: white;
+    @media only screen and (min-width: 1024px) {
+      background-color: inherit;
+      height: auto;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+      position: inherit;
+      width: max-content;
+    }
+  }
+  &__nav {
+  }
+
+  // === Navigation ===
+  .nav {
+    &__list {
+      @media only screen and (min-width: 1024px) {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    &__item {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      @media only screen and (min-width: 1024px) {
+        font-size: 14px;
+        margin-top: 0;
+        margin-left: 60px;
+      }
+    }
+    &__link {
+    }
+  }
+
+  // === Search ===
+  .search {
+    display: none;
+    transition: 0.3s ease-in-out;
+    &__form {
+      display: none;
+      margin-right: 1rem;
+    }
+    &__input {
+      max-width: 200px;
+    }
+    &__icon {
+    }
+    @media only screen and (min-width: 1024px) {
+      display: flex;
+      align-items: center;
+      margin-left: 60px;
+    }
+  }
+
+  // === Burger ===
+  $burger-width: 32px;
+  $burger-height: 24px;
+  $burger-line-height: 3px;
+  $burger-clr: white;
+  &__burger {
+    // --- Size ---
+    width: $burger-width;
+    height: $burger-height;
+    // --- Position of child elements ---
+    display: flex;
+    align-items: center;
+    // --- Position ---
+    position: relative;
+    &::before,
+    &::after {
+      // --- Position ---
+      position: absolute;
+      // --- Content of lines ---
+      content: "";
+      // --- Size ---
+      width: 100%;
+      height: $burger-line-height;
+      // --- Stylizing ---
+      border-radius: 14px;
+      background-color: $burger-clr;
+      // --- Transitions ---
+      transition: 0.3s ease-in-out;
+    }
+
+    &::before {
+      top: 0;
+    }
+    span {
+      display: block;
+      height: $burger-line-height;
+      background-color: $burger-clr;
+      width: 100%;
+      // --- Transitions ---
+      transition: 0.3s ease-in-out;
+    }
+    &::after {
+      bottom: 0;
+    }
+
+    // Active burger
+    &.active {
+      span {
+        transform: translateX(-#{$burger-width});
+        opacity: 0;
+      }
+      &::before {
+        transform-origin: top left;
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform-origin: bottom left;
+        transform: rotate(-45deg);
+      }
+    }
+    @media only screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
+}

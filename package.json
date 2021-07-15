@@ -1,0 +1,29 @@
+{
+  "name": "alecto",
+  "version": "1.0.0",
+  "description": "Template for eCommerce shop",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx gulp build",
+    "dev": "npx gulp watch"
+  },
+  "keywords": [
+    "template",
+    "site",
+    "html",
+    "css",
+    "js"
+  ],
+  "author": "Coded by Daniil Shilo (Template by Symu.co)",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-include": "^2.4.1",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "node-sass": "^6.0.1",
+    "normalize.css": "^8.0.1",
+    "surge": "^0.23.0"
+  }
+}

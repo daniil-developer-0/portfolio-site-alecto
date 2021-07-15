@@ -1,0 +1,35 @@
+.quotes {
+  background-image: url("/assets/img/bg-quotes.png");
+  &__img {
+    margin: 0 auto;
+    display: block;
+  }
+  &__title {
+    font-size: 30px;
+    font-family: "Raleway", sans-serif;
+    // line-height: 3.2em;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: white;
+  }
+  &__green-text {
+    color: #17daa3;
+  }
+  &__author {
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Raleway", sans-serif;
+    color: #3f3f3f;
+    text-align: center;
+  }
+  .slider {
+    &__wrapper {
+      @media only screen and (min-width: 1024px) {
+        padding: 190px 0 150px;
+      }
+      padding: 120px 0 100px;
+    }
+  }
+}

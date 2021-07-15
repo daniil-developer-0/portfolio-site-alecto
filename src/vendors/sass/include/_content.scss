@@ -1,0 +1,38 @@
+// Content section
+.content {
+  &__background_grey {
+    background-color: #f8f9fa;
+  }
+  &__row {
+    &,
+    &_reverse {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 100px;
+      padding-bottom: 100px;
+      @media only screen and (min-width: 1024px) {
+        padding-top: 165px;
+        padding-bottom: 165px;
+      }
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    &__row {
+      flex-direction: row;
+      & > *:last-child {
+              margin-left: 80px;
+          }
+      &_reverse {
+        flex-direction: row-reverse;
+        & > *:first-child {
+          margin-left: 80px;
+        }
+      }
+    }
+    &__img {
+      width: 90%;
+    }
+  }
+}

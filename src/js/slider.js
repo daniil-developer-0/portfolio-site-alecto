@@ -27,6 +27,8 @@ sliders.forEach((item) => {
     return index;
   };
   let currentSlide = detectActiveSlide();
+
+
   function addBreadcrumbs() {
     const slides = item.querySelectorAll(".slider__slide");
     const breadcrumbsContainer = item.querySelector(".slider__breadcrumbs");
@@ -43,6 +45,7 @@ sliders.forEach((item) => {
       breadcrumbsContainer.appendChild(breadcrumb);
     });
   }
+
   function showPreviousSlide(event) {
     if (event?.target) {
       // Remove "active" class from current slide
@@ -50,7 +53,7 @@ sliders.forEach((item) => {
       // Remove "active" class from current breadcrumb
       breadcrumbs[currentSlide--].classList.remove("active");
 
-      if (activeSlide < 0) {
+      if (currentSlide < 0) {
         currentSlide = slides.length - 1;
       }
 

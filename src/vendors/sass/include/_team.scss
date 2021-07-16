@@ -1,0 +1,49 @@
+.team {
+  &__title {
+  }
+  &__text {
+    text-align: center;
+  }
+  &__list {
+    @media only screen and (min-width: 1440px) {
+      display: grid;
+      grid-template: repeat(2, 1fr) / repeat(5, 1fr);
+    }
+    max-width: max-content;
+    margin: 100px auto 110px;
+  }
+  &__item {
+    position: relative;
+    max-width: 400px;
+    max-height: 400px;
+    width: 100%;
+    &:hover {
+      // Hide image
+      .team__img {
+        opacity: 0;
+      }
+      // Show name
+      .team__name {
+        opacity: 1;
+      }
+    }
+  }
+  &__img {
+    transition: 0.3s ease-in-out;
+  }
+  &__name {
+    transition: 0.3s ease-in-out;
+    background-color: #2dddab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    font-weight: 200;
+    font-size: 36px;
+    font-family: "Raleway", sans-serif;
+    color: white;
+    text-align: center;
+  }
+}

@@ -8,19 +8,15 @@
     text-align: center;
   }
   &__list {
-    @media only screen and (min-width: 1024px) {
-    }
     @media only screen and (min-width: 1440px) {
       display: grid;
       grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+      grid-row-gap: 115px;
+      grid-column-gap: 80px;
+      padding: 60px 0;
     }
   }
   &__item {
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // flex-direction: column;
-
     @media only screen and (min-width: 1024px) {
       display: flex;
       justify-content: center;
@@ -51,6 +47,9 @@
     @media only screen and (min-width: 1024px) {
       font-size: 60px;
       text-align: left;
+    }
+    @media only screen and (min-width: 1440px) {
+      margin-top: 0;
     }
   }
   &__text {

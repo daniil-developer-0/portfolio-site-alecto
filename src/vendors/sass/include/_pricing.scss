@@ -1,0 +1,65 @@
+.pricing {
+  background-color: #f8f9fa;
+  padding: 120px 0 100px;
+  &__text {
+    text-align: center;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    @media only screen and (min-width: 1024px) {
+        flex-direction: row;
+    }
+  }
+  &__item {
+    &_wrapper {
+      padding: 0 30px 80px;
+    }
+    margin-top: 30px;
+    background: white;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 17.5px rgba(227, 227, 227, 0.65));
+    @media only screen and (min-width: 1024px) {
+        margin-top: 0;
+      margin-left: 30px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+  &__price {
+    border-bottom: #efefef 1px solid;
+    padding: 50px 0 60px;
+    .info {
+      color: #87949e;
+      display: block;
+      margin-top: 30px;
+    }
+    .price {
+      display: block;
+      font-size: 60px;
+      letter-spacing: 2px;
+      color: #17daa3;
+      font-weight: 250;
+      font-family: "Raleway";
+    }
+  }
+  &__btn {
+      cursor: pointer;
+      padding: 35px 30px;
+      background-color: #17daa3;
+      border-radius: 0 0 5px 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &-text {
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 5px;
+      }
+  }
+}
